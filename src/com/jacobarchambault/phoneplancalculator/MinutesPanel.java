@@ -16,17 +16,13 @@ public class MinutesPanel extends JPanel {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private final JTextField minutes; // To get minutes
+	private final JTextField minutes = new JTextField(
+			10); // To get minutes
 
 	/**
 	 * Constructor
 	 */
 	public MinutesPanel() {
-		// Create a label prompting the user and a text field.
-		final var minutesMsg = new JLabel(
-				"Minutes:");
-		minutes = new JTextField(
-				10);
 		// Create a GridLayout manager.
 		setLayout(
 				new GridLayout(
@@ -38,7 +34,8 @@ public class MinutesPanel extends JPanel {
 						"Time of Call"));
 		// Add the labels and text fields to this panel.
 		add(
-				minutesMsg);
+				new JLabel(
+						"Minutes:"));
 		add(
 				minutes);
 	}
@@ -52,8 +49,7 @@ public class MinutesPanel extends JPanel {
 	 */
 	public double getCharges(
 			final double rate) {
-		final var charges = Double.parseDouble(
+		return Double.parseDouble(
 				minutes.getText()) * rate;
-		return charges;
 	}
 }
