@@ -57,13 +57,6 @@ public class PhonePlanCalculator extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	public static void main(
-			String[] args) {
-		new PhonePlanCalculator();
-
-	}
-
 	private JPanel buttonPanel; // A panel for the buttons
 	private JButton calcButton; // Calculates everything
 
