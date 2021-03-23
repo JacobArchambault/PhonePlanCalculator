@@ -40,14 +40,13 @@ public class PhonePlanCalculator extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JPanel buttonPanel; // A panel for the buttons
-	private JButton calcButton; // Calculates everything
-
-	private JButton exitButton; // Exits the application
-
-	private MinutesPanel minutesPanel; // A panel for minutes
-
-	private RatePanel ratePanel; // A panel for rates
+	private JPanel buttonPanel = new JPanel(); // A panel for the buttons
+	private JButton calcButton = new JButton(
+			"Calculate Charges"); // Calculates everything
+	private JButton exitButton = new JButton(
+			"Exit"); // Exits the application
+	private MinutesPanel minutesPanel = new MinutesPanel(); // A panel for minutes
+	private RatePanel ratePanel = new RatePanel(); // A panel for rates
 
 	/**
 	 * Constructor
@@ -59,10 +58,6 @@ public class PhonePlanCalculator extends JFrame {
 		// Specify what happens when the close button is clicked.
 		setDefaultCloseOperation(
 				WindowConstants.EXIT_ON_CLOSE);
-		// Create a RatePanel object.
-		ratePanel = new RatePanel();
-		// Create a MinutesPanel object.
-		minutesPanel = new MinutesPanel();
 		// Build the panel that contains the buttons.
 		buildButtonPanel();
 		// Add the panels to the content pane.
@@ -85,19 +80,14 @@ public class PhonePlanCalculator extends JFrame {
 	 * The buildButtonPanel method creates a panel containing buttons.
 	 */
 	private void buildButtonPanel() {
-		// Create a button to calculate the charges.
-		calcButton = new JButton(
-				"Calculate Charges");
 		// Add an action listener to the button.
 		calcButton.addActionListener(
 				new CalcButtonListener());
-		// Create a button to exit the application.
-		exitButton = new JButton(
-				"Exit");
 		// Add an action listener to the button.
-		exitButton.addActionListener(e -> System.exit(0));
+		exitButton.addActionListener(
+				e -> System.exit(
+						0));
 		// Put the buttons in their own panel.
-		buttonPanel = new JPanel();
 		buttonPanel.add(
 				calcButton);
 		buttonPanel.add(
