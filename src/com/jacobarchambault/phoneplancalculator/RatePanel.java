@@ -17,19 +17,19 @@ public class RatePanel extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private ButtonGroup bg = new ButtonGroup(); // Radio button group
-	private JRadioButton daytime; // Radio button for daytime rate
-	// Named constants for rates
 	private final double DAYTIME_RATE = 0.07;
-	private JRadioButton evening; // Radio button for evening rate
+	private JRadioButton daytime = new JRadioButton(String.format("Daytime ($%,.2f) per minute", DAYTIME_RATE));
+// Radio button for daytime rate
+	// Named constants for rates
 	private final double EVENING_RATE = 0.12;
+	private JRadioButton evening = new JRadioButton(String.format("Evening ($%,.2f) per minute", EVENING_RATE));
+// Radio button for evening rate
 	private final double OFF_PEAK_RATE = 0.05;
-	private JRadioButton offPeak; // Radio button for off peak rate
+	private JRadioButton offPeak = new JRadioButton(String.format("Off-Peak ($%,.2f) per minute", OFF_PEAK_RATE));
+// Radio button for off peak rate
 
 	public RatePanel() {
 		// Create the radio buttons.
-		daytime = new JRadioButton(String.format("Daytime ($%,.2f) per minute", DAYTIME_RATE));
-		evening = new JRadioButton(String.format("Evening ($%,.2f) per minute", EVENING_RATE));
-		offPeak = new JRadioButton(String.format("Off-Peak ($%,.2f) per minute", OFF_PEAK_RATE));
 		// Group the radio buttons.
 		bg.add(daytime);
 		bg.add(evening);
