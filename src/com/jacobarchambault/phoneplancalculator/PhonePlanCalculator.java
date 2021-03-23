@@ -25,15 +25,14 @@ public class PhonePlanCalculator extends JFrame {
 		 * @param e An ActionEvent object.
 		 */
 		@Override
-		public void actionPerformed(ActionEvent e) {
-			double rate; // Applicable rate
-			double totalCharges; // Total charges
-			// Get the applicable rate.
-			rate = ratePanel.getRate();
-			// Get the total charges
-			totalCharges = minutesPanel.getCharges(rate);
-			// Display the message.
-			JOptionPane.showMessageDialog(null, String.format("Total Charges: $%,.2f", totalCharges));
+		public void actionPerformed(
+				ActionEvent e) {
+			JOptionPane.showMessageDialog(
+					null,
+					String.format(
+							"Total Charges: $%,.2f",
+							minutesPanel.getCharges(
+									ratePanel.getRate())));
 		}
 	} // End of inner class
 
@@ -47,8 +46,10 @@ public class PhonePlanCalculator extends JFrame {
 		 * @param e An ActionEvent object.
 		 */
 		@Override
-		public void actionPerformed(ActionEvent e) {
-			System.exit(0);
+		public void actionPerformed(
+				ActionEvent e) {
+			System.exit(
+					0);
 		}
 	} // End of inner class
 
@@ -57,7 +58,8 @@ public class PhonePlanCalculator extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public static void main(String[] args) {
+	public static void main(
+			String[] args) {
 		new PhonePlanCalculator();
 
 	}
@@ -76,9 +78,11 @@ public class PhonePlanCalculator extends JFrame {
 	 */
 	public PhonePlanCalculator() {
 		// Display a title.
-		setTitle("Long Distance Charges");
+		setTitle(
+				"Long Distance Charges");
 		// Specify what happens when the close button is clicked.
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(
+				WindowConstants.EXIT_ON_CLOSE);
 		// Create a RatePanel object.
 		ratePanel = new RatePanel();
 		// Create a MinutesPanel object.
@@ -86,12 +90,19 @@ public class PhonePlanCalculator extends JFrame {
 		// Build the panel that contains the buttons.
 		buildButtonPanel();
 		// Add the panels to the content pane.
-		add(ratePanel, BorderLayout.NORTH);
-		add(minutesPanel, BorderLayout.CENTER);
-		add(buttonPanel, BorderLayout.SOUTH);
+		add(
+				ratePanel,
+				BorderLayout.NORTH);
+		add(
+				minutesPanel,
+				BorderLayout.CENTER);
+		add(
+				buttonPanel,
+				BorderLayout.SOUTH);
 		// Pack and display the window.
 		pack();
-		setVisible(true);
+		setVisible(
+				true);
 	}
 
 	/**
@@ -99,17 +110,23 @@ public class PhonePlanCalculator extends JFrame {
 	 */
 	private void buildButtonPanel() {
 		// Create a button to calculate the charges.
-		calcButton = new JButton("Calculate Charges");
+		calcButton = new JButton(
+				"Calculate Charges");
 		// Add an action listener to the button.
-		calcButton.addActionListener(new CalcButtonListener());
+		calcButton.addActionListener(
+				new CalcButtonListener());
 		// Create a button to exit the application.
-		exitButton = new JButton("Exit");
+		exitButton = new JButton(
+				"Exit");
 		// Add an action listener to the button.
-		exitButton.addActionListener(new ExitButtonListener());
+		exitButton.addActionListener(
+				new ExitButtonListener());
 		// Put the buttons in their own panel.
 		buttonPanel = new JPanel();
-		buttonPanel.add(calcButton);
-		buttonPanel.add(exitButton);
+		buttonPanel.add(
+				calcButton);
+		buttonPanel.add(
+				exitButton);
 	}
 
 }
