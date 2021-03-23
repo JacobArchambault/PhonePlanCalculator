@@ -49,10 +49,8 @@ public class PhonePlanCalculator extends JFrame {
 	/**
 	 * Constructor
 	 */
-	public PhonePlanCalculator() {
-		// Display a title.
-		setTitle(
-				"Long Distance Charges");
+	public PhonePlanCalculator(String title) {
+		super(title);
 		// Specify what happens when the close button is clicked.
 		setDefaultCloseOperation(
 				WindowConstants.EXIT_ON_CLOSE);
