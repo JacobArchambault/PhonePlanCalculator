@@ -37,23 +37,6 @@ public class PhonePlanCalculator extends JFrame {
 	} // End of inner class
 
 	/**
-	 * ExitButtonListener is an action listener class for the exitButton component.
-	 */
-	private class ExitButtonListener implements ActionListener {
-		/**
-		 * actionPerformed method
-		 * 
-		 * @param e An ActionEvent object.
-		 */
-		@Override
-		public void actionPerformed(
-				ActionEvent e) {
-			System.exit(
-					0);
-		}
-	} // End of inner class
-
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
@@ -112,8 +95,7 @@ public class PhonePlanCalculator extends JFrame {
 		exitButton = new JButton(
 				"Exit");
 		// Add an action listener to the button.
-		exitButton.addActionListener(
-				new ExitButtonListener());
+		exitButton.addActionListener(e -> System.exit(0));
 		// Put the buttons in their own panel.
 		buttonPanel = new JPanel();
 		buttonPanel.add(
