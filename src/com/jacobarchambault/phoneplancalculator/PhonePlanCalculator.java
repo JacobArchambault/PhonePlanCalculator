@@ -1,6 +1,7 @@
 package com.jacobarchambault.phoneplancalculator;
 
 import java.awt.BorderLayout;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -13,20 +14,20 @@ import javax.swing.WindowConstants;
  */
 public class PhonePlanCalculator extends JFrame {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
-	private JPanel buttonPanel = new JPanel(); // A panel for the buttons
-	private JButton calcButton = new JButton(
+	private final JPanel buttonPanel = new JPanel(); // A panel for the buttons
+	private final JButton calcButton = new JButton(
 			"Calculate Charges"); // Calculates everything
-	private MinutesPanel minutesPanel = new MinutesPanel(); // A panel for minutes
-	private RatePanel ratePanel = new RatePanel(); // A panel for rates
+	private final MinutesPanel minutesPanel = new MinutesPanel(); // A panel for minutes
+	private final RatePanel ratePanel = new RatePanel(); // A panel for rates
 
 	/**
 	 * Constructor
 	 */
 	public PhonePlanCalculator(
-			String title) {
+			final String title) {
 		super(
 				title);
 		// Specify what happens when the close button is clicked.
