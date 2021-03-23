@@ -16,27 +16,6 @@ import javax.swing.WindowConstants;
  */
 public class PhonePlanCalculator extends JFrame {
 	/**
-	 * CalcButtonListener is an action listener class for the calcButton component.
-	 */
-	private class CalcButtonListener implements ActionListener {
-		/**
-		 * actionPerformed method
-		 * 
-		 * @param e An ActionEvent object.
-		 */
-		@Override
-		public void actionPerformed(
-				ActionEvent e) {
-			JOptionPane.showMessageDialog(
-					null,
-					String.format(
-							"Total Charges: $%,.2f",
-							minutesPanel.getCharges(
-									ratePanel.getRate())));
-		}
-	} // End of inner class
-
-	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
@@ -49,8 +28,10 @@ public class PhonePlanCalculator extends JFrame {
 	/**
 	 * Constructor
 	 */
-	public PhonePlanCalculator(String title) {
-		super(title);
+	public PhonePlanCalculator(
+			String title) {
+		super(
+				title);
 		// Specify what happens when the close button is clicked.
 		setDefaultCloseOperation(
 				WindowConstants.EXIT_ON_CLOSE);
@@ -78,7 +59,12 @@ public class PhonePlanCalculator extends JFrame {
 	private void buildButtonPanel() {
 		// Add an action listener to the button.
 		calcButton.addActionListener(
-				new CalcButtonListener());
+				e -> JOptionPane.showMessageDialog(
+						null,
+						String.format(
+								"Total Charges: $%,.2f",
+								minutesPanel.getCharges(
+										ratePanel.getRate()))));
 		// Put the buttons in their own panel.
 		buttonPanel.add(
 				calcButton);
