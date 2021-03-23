@@ -43,8 +43,6 @@ public class PhonePlanCalculator extends JFrame {
 	private JPanel buttonPanel = new JPanel(); // A panel for the buttons
 	private JButton calcButton = new JButton(
 			"Calculate Charges"); // Calculates everything
-	private JButton exitButton = new JButton(
-			"Exit"); // Exits the application
 	private MinutesPanel minutesPanel = new MinutesPanel(); // A panel for minutes
 	private RatePanel ratePanel = new RatePanel(); // A panel for rates
 
@@ -83,15 +81,9 @@ public class PhonePlanCalculator extends JFrame {
 		// Add an action listener to the button.
 		calcButton.addActionListener(
 				new CalcButtonListener());
-		// Add an action listener to the button.
-		exitButton.addActionListener(
-				e -> System.exit(
-						0));
 		// Put the buttons in their own panel.
 		buttonPanel.add(
 				calcButton);
-		buttonPanel.add(
-				exitButton);
 	}
 
 }
